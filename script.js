@@ -1,10 +1,16 @@
 function firstNonRepeatedChar(str) {
-  for (let i = 0; i < str.length; i++) {
-    if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
-      return str[i];
-    }
-  }
-  return null;
+ let map = new Map();
+ 
+ for(let char of word){
+   map.set(char, (map.get(char) || 0) + 1);
+   
+ }
+ 
+ for(let char of word){
+   if(map.get(char) === 1){
+     return char;
+   }
+ }
 }
 
 // Please do not change the code below
